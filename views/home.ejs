@@ -1,14 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><%= title %></title>
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="/css/home.css">
 </head>
+
 <body>
-    <h1><%= title %> Home</h1>
-    
+    <div class="container">
+        <div class="heading border-bottom">
+            <h1>TODO App</h1>
+        </div>
+        <div class="form-container">
+            <form action="/create-task" class="form">
+                <div class="description hover border-bottom">
+                    <label for="description">Description</label>
+                    <input type="text" name="description" id="#description" placeholder="What do you need to do?">
+                </div>
+                <div class="category-date-container border-bottom">
+                    <div class="category hover">
+                        <label for="category">Category</label>
+                        <select name="category" id="#category">
+                            <option value="">Choose a category</option>
+                            <option value="work">work</option>
+                            <option value="school">school</option>
+                            <option value="personal">personal</option>
+                            <option value="other">other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="date hover">
+                        <label for="date">Due Date</label>
+                        <input type="date" name="date" id="#date">
+                    </div>
+                </div>
+                
+            </form>
+        </div>
+        <div class="action border-bottom">
+            <button  class="btn add">
+                <i class="fas fa-plus"></i> Add Task
+            </button >
+            <button class="btn delete">
+                <i class="fas fa-trash-alt"></i> Delete Tasks
+            </button>
+        </div>
+        <div class="tasks-container">
+            <div class="task border-bottom">
+                <input type="checkbox" name="" id="">
+                <div class="task-detail">
+                    <p class="desc">Lorem ipsum dolor sit amet consectetur?</p>
+                    <span class="due-date">
+                        <i class="fas fa-calendar"></i> Mar 20, 2021
+                    </span>
+                </div>
+                <div class="task-category work">
+                    work
+                </div>
+            </div>
+        </div>
+    </div>
+
 </body>
+
 </html>
