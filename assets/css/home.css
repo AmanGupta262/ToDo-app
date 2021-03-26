@@ -16,6 +16,9 @@ body{
     margin-top: 2rem;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.1);
 }
+.fas{
+    margin-right: 0.3rem;
+}
 .heading h1{
     text-align: center;
     padding-block: 1rem;
@@ -44,6 +47,10 @@ label{
     background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat;
     background-size: contain;
     background-position: right;
+}
+.form select option:checked,
+.form select option:hover {
+    box-shadow: 0 0 10px 100px violet inset;
 }
 .hover:focus,
 .hover:hover{

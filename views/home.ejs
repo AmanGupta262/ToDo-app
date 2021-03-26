@@ -18,10 +18,10 @@
             <h1>TODO App</h1>
         </div>
         <div class="form-container">
-            <form action="/create-task" class="form">
+            <form action="/create-task" class="form" id="create-form" method="POST">
                 <div class="description hover border-bottom">
                     <label for="description">Description</label>
-                    <input type="text" name="description" id="#description" placeholder="What do you need to do?">
+                    <input type="text" name="description" id="#description" placeholder="What do you need to do?" required>
                 </div>
                 <div class="category-date-container border-bottom">
                     <div class="category hover">
@@ -37,21 +37,22 @@
                     
                     <div class="date hover">
                         <label for="date">Due Date</label>
-                        <input type="date" name="date" id="#date">
+                        <input type="date" name="date" id="#date" required>
                     </div>
                 </div>
                 
             </form>
         </div>
         <div class="action border-bottom">
-            <button  class="btn add">
+            <button  class="btn add" type="submit" form="create-form">
                 <i class="fas fa-plus"></i> Add Task
             </button >
-            <button class="btn delete">
+            <button class="btn delete" type="submit" form="delete-form">
                 <i class="fas fa-trash-alt"></i> Delete Tasks
             </button>
         </div>
         <div class="tasks-container">
+            <form action="/delete" method="post" id="delete-form">
             <div class="task border-bottom">
                 <input type="checkbox" name="" id="">
                 <div class="task-detail">
@@ -64,6 +65,8 @@
                     work
                 </div>
             </div>
+            
+            </form>
         </div>
     </div>
 
