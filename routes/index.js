@@ -7,5 +7,6 @@ console.log("router loaded");
 
 router.get('/', homeController.home);
 router.post('/create-task', homeController.create);
+router.post('/delete-task', homeController.delete);
 
 module.exports = router;

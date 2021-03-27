@@ -23,3 +23,16 @@ module.exports.create = (req, res) => {
     });
 }
 
+module.exports.delete = (req, res) => {
+    Task.deleteMany(
+        {
+            _id: {
+                $in: req.body.task
+            }
+        },
+        (err) => {
+            if(err){ console.log("Error in finding task"); return; }
+            return res.redirect('back');
+        }
+    );
+}
