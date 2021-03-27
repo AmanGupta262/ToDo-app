@@ -48,9 +48,8 @@ label{
     background-size: contain;
     background-position: right;
 }
-.form select option:checked,
-.form select option:hover {
-    box-shadow: 0 0 10px 100px violet inset;
+.form select option {
+    text-transform: capitalize;
 }
 .hover:focus,
 .hover:hover{
@@ -114,6 +113,9 @@ label{
 .task .task-category{
     margin-left: auto;
     color: white;
+    height: 2rem;
+    width: 5rem;
+    text-align: center;
     padding: .5rem 1rem;
     font-size: .6rem;
     text-transform: uppercase;
