@@ -10,3 +10,40 @@ module.exports.home = (req, res) => {
         });
     });
 };
+
+module.exports.create = (req, res) => {
+    Task.create({
+        description: req.body.description,
+        dueDate: req.body.date,
+        category: req.body.category
+    }, (err, task) => {
+        if(err){ console.log("Error in creating task: ", err); return; }
+
+        return res.redirect('back');
+    });
+}   
+
+module.exports.deleteSelected = (req, res) => {
+    Task.deleteMany(
+        {
+            _id: {
+                $in: req.body.task
+            }
+        },
+        (err) => {
+            if(err){ console.log("Error in finding task"); return; }
+            return res.redirect('back');
+        }
+    );
+}
+
+module.exports.delete = (req, res) => {
+    
+    Task.findByIdAndDelete(req.params.id, (err) => {
+        if (err) {
+            console.log("Error in finding record ", err);
+            return;
+        }
+        return res.redirect('back');
+    });
+}

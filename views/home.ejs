@@ -8,6 +8,8 @@
     <title>
         <%= title %>
     </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
@@ -25,7 +27,7 @@
                 <div class="category-date-container border-bottom">
                     <div class="category hover">
                         <label for="category">Category</label>
-                        <select name="category" id="#category">
+                        <select name="category" id="#category" required>
                             <option value="">Choose a category</option>
                             <option value="work">work</option>
                             <option value="school">school</option>
@@ -37,7 +39,7 @@
                     <div class="date hover">
                         <label for="date">Due Date</label>
                         <input type="date" name="date" id="#date" required>
-                    </div>
+                    </div>                   
                 </div>
 
             </form>
@@ -64,6 +66,9 @@
                     </div>
                     <div class="task-category <%= task.category %>">
                         <%= task.category %>
+                    </div>
+                    <div class="delete-task">
+                        <a href="/delete-task/<%= task._id %>"><i class="fas fa-trash"></i></a>
                     </div>
                 </div>
                 <% } %>
