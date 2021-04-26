@@ -5,18 +5,27 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Title -->
     <title>
         <%= title %>
     </title>
+    <!-- Font awesome cdn -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Css for todo -->
     <link rel="stylesheet" href="/css/home.css">
 </head>
 
 <body>
+    <!-- Container -->
     <div class="container">
+
+        <!-- Heading -->
         <div class="heading border-bottom">
             <h1>TODO App</h1>
         </div>
+        <!-- End Heading -->
+
+        <!-- Form for creating Todo -->
         <div class="form-container">
             <form action="/create-task" class="form" id="create-form" method="POST">
                 <div class="description hover border-bottom">
@@ -44,6 +53,9 @@
 
             </form>
         </div>
+        <!-- End Form for creating Todo -->
+
+        <!-- Actions .i.e Create and Delete Buttons -->
         <div class="action border-bottom">
             <button class="btn add" type="submit" form="create-form">
                 <i class="fas fa-plus"></i> Add Task
@@ -52,7 +64,9 @@
                 <i class="fas fa-trash-alt"></i> Delete Tasks
             </button>
         </div>
+        <!-- End Actions .i.e Create and Delete Buttons -->
 
+        <!-- TOdos Conrainer -->
         <div class="tasks-container">
             <form action="/delete-task" method="post" id="delete-form">
                 <% for(let task of tasks){ %>
@@ -72,10 +86,12 @@
                     </div>
                 </div>
                 <% } %>
-
             </form>
         </div>
+        <!-- End TOdos Conrainer -->
+
     </div>
+    <!-- End Container -->
 
 </body>
 

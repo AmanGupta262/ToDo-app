@@ -1,5 +1,7 @@
+// Import task model
 const Task = require('../models/task');
 
+// Action for showing todos
 module.exports.home = (req, res) => {
     Task.find({}, (err, tasks) => {
         if (err) { console.log("Error in finding tasks"); return; }
@@ -11,6 +13,7 @@ module.exports.home = (req, res) => {
     });
 };
 
+// Action for creating todos
 module.exports.create = (req, res) => {
     Task.create({
         description: req.body.description,
@@ -23,6 +26,7 @@ module.exports.create = (req, res) => {
     });
 }   
 
+// Action for deleting multiple todos
 module.exports.deleteSelected = (req, res) => {
     Task.deleteMany(
         {
@@ -37,6 +41,7 @@ module.exports.deleteSelected = (req, res) => {
     );
 }
 
+// Action for deleting single todo
 module.exports.delete = (req, res) => {
     
     Task.findByIdAndDelete(req.params.id, (err) => {

@@ -1,7 +1,11 @@
+// import express
 const express = require('express');
 const app = express();
+
+// Assigning port for server
 const port = 8000;
 
+// Use body parser for parsing form data
 app.use(express.urlencoded({extended: true}));
 
 // use express router
@@ -17,6 +21,7 @@ app.set('views', './views');
 // static files
 app.use(express.static('assets'));
 
+// Starting server
 app.listen(port, err => {
     if(err){
         console.log(`Error in running server ${err}`);
