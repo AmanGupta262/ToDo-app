@@ -3,7 +3,7 @@ const express = require('express');
 const app = express();
 
 // Assigning port for server
-const port = 8000;
+const port = process.env.PORT || 8000;
 
 // Use body parser for parsing form data
 app.use(express.urlencoded({extended: true}));
